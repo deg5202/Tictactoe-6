@@ -1,22 +1,21 @@
 using UnityEngine;
-using UnityEngine.UI;
+using static Constants;
 
 public class MainPanelController : MonoBehaviour
-{
-    [SerializeField] private Button singleplayBtn;
-    [SerializeField] private Button dualplayBtn;
-    [SerializeField] private Button settingBtn;
-    
+{    
     public void OnClickSinglePlayButton()
     {
-        
+        GameManager.Instance.ChangeToGameScene(GameType.SinglePlay);
+
     }
+
     public void OnClickDualPlayButton()
     {
-        
+       GameManager.Instance.ChangeToGameScene(GameType.DualPlay);
     }
-    public void OnClickSettingButton()
+
+    public void OnClickSettingsButton()
     {
-        
+        GameManager.Instance.OpenSettingsPanel();
     }
 }
